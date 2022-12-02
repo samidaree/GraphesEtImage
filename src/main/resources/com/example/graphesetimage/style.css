@@ -1,0 +1,39 @@
+.parent{
+    -fx-background-color: transparent;
+}
+
+.dark-panel{
+    -fx-background-color: #45515F;
+}
+
+
+.icons:hover{
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-border-color: #F3A978;
+    -fx-border-style: solid;
+    -fx-border-radius: 2px;
+    -fx-cursor: pointer;
+}
+
+.button{
+    -fx-background-color: #596575 ;
+    -fx-text-fill: white;
+}
+
+.button:hover{
+    -fx-background-color: #F3A978 ;
+}
+
+.text-field {
+    -fx-background-color: #596575;
+    -fx-border-style: solid ;
+    -fx-border-color: rgba(255,255,255,255.25);
+    -fx-border-width: 1px;
+    -fx-border-radius: 2px ;
+    -fx-text-fill: white;
+}
+
+.text-field:hover{
+    -fx-border-color: #F3A978;
+
+}
