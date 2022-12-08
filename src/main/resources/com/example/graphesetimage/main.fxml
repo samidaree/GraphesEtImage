@@ -26,7 +26,7 @@
                      </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="icons">
                      <children>
-                        <ImageView fx:id="addImageIcon" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#openFileMenu" onMouseEntered="#iconAddImageEntered" onMouseExited="#iconAddImageExited" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="addImageIcon" fitHeight="50.0" fitWidth="50.0" onMouseEntered="#iconAddImageEntered" onMouseExited="#iconAddImageExited" onMousePressed="#action" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/add_image.png" />
                            </image>
@@ -34,7 +34,7 @@
                      </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="icons">
                      <children>
-                        <ImageView fx:id="changePixelsIcon" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#openPixels" onMouseEntered="#iconChangePixelsEntered" onMouseExited="#iconChangePixelsExited" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="changePixelsIcon" fitHeight="50.0" fitWidth="50.0" onMouseEntered="#iconChangePixelsEntered" onMouseExited="#iconChangePixelsExited" onMousePressed="#action" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/replace.png" />
                            </image>
@@ -43,7 +43,7 @@
                   </Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="icons">
                      <children>
-                        <ImageView fx:id="helpIcon" fitHeight="50.0" fitWidth="50.0"  onMouseEntered="#iconHelpEntered" onMouseExited="#iconHelpExited" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="helpIcon" fitHeight="50.0" fitWidth="50.0" onMouseEntered="#iconHelpEntered" onMouseExited="#iconHelpExited" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/info.png" />
                            </image>
@@ -57,8 +57,40 @@
             </HBox>
          </children>
       </StackPane>
-      <Pane fx:id="pane" layoutY="85.0" prefHeight="455.0" prefWidth="410.0">
-
+      <AnchorPane fx:id="anchorPixel" layoutY="95.0" onMousePressed="#action" prefHeight="445.0" prefWidth="410.0" styleClass="dark-panel">
+         <children>
+            <Label layoutX="96.0" layoutY="61.0" text="Saisissez les pixels " textFill="WHITE">
+               <font>
+                  <Font name="B612 Mono Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputPixelDepart" layoutX="124.0" layoutY="93.0" promptText="Pixel de départ" />
+            <TextField fx:id="inputPixelArrivee" layoutX="124.0" layoutY="137.0" promptText="Pixel de départ" />
+            <Button layoutX="295.0" layoutY="384.0" mnemonicParsing="false" onAction="#validerPixel" text="Valider">
+               <font>
+                  <Font name="B612 Mono Regular" size="17.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="imageViewDepart" fitHeight="150.0" fitWidth="200.0" layoutX="105.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="resultat" layoutY="95.0" prefHeight="445.0" prefWidth="410.0" styleClass="dark-panel" stylesheets="@style.css">
+         <children>
+            <ImageView fx:id="imageViewResultat" fitHeight="150.0" fitWidth="200.0" layoutX="105.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+      <Pane fx:id="pane" layoutY="95.0" onMouseClicked="#action" onMousePressed="#action" prefHeight="445.0" prefWidth="410.0" styleClass="dark-panel">
+         <children>
+            <Label layoutX="94.0" layoutY="160.0" text="Séléctionner l'image" textFill="WHITE">
+               <font>
+                  <Font name="B612 Mono Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="144.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#parcourirFichier" text="Parcourir">
+               <font>
+                  <Font name="B612 Mono Regular" size="17.0" />
+               </font>
+            </Button>
+         </children>
       </Pane>
+
    </children>
 </AnchorPane>
