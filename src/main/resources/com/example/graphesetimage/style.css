@@ -6,13 +6,13 @@
     -fx-background-color: #45515F;
 }
 
+.color-picker{
+    -fx-background-color: #596575;
 
-.icons:hover{
-    -fx-border-width: 0px 0px 3px 0px;
-    -fx-border-color: #F3A978;
-    -fx-border-style: solid;
-    -fx-border-radius: 2px;
-    -fx-cursor: pointer;
+}
+.color-picker:hover{
+    -fx-background-color: #F3A978 ;
+    -fx-cursor: hand;
 }
 
 .button{
@@ -22,6 +22,7 @@
 
 .button:hover{
     -fx-background-color: #F3A978 ;
+    -fx-cursor: hand;
 }
 
 .text-field {

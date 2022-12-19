@@ -1,0 +1,8 @@
+.icons:hover{
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-border-color: #F3A978;
+    -fx-border-style: solid;
+    -fx-border-radius: 2px;
+    -fx-cursor: hand;
+}
+

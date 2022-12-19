@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="410.0" styleClass="parent" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.graphesetimage.Controller">
@@ -15,13 +15,10 @@
                <children>
                   <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" styleClass="icons">
                      <children>
-                        <ImageView fx:id="settingsIcon" fitHeight="50.0" fitWidth="50.0" layoutX="-47.0" onMouseClicked="#openSettings" onMouseEntered="#iconSettingsEntered" onMouseExited="#iconSettingsExited" pickOnBounds="true" preserveRatio="true" x="50.0">
+                        <ImageView fx:id="settingsIcon" fitHeight="50.0" fitWidth="50.0" layoutX="-47.0" onMouseEntered="#iconSettingsEntered" onMouseExited="#iconSettingsExited" onMousePressed="#action" pickOnBounds="true" preserveRatio="true" x="50.0">
                            <image>
                               <Image url="@images/settings.png" />
                            </image>
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
                         </ImageView>
                      </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="icons">
@@ -43,41 +40,48 @@
                   </Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="icons">
                      <children>
-                        <ImageView fx:id="helpIcon" fitHeight="50.0" fitWidth="50.0" onMouseEntered="#iconHelpEntered" onMouseExited="#iconHelpExited" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="helpIcon" fitHeight="45.0" fitWidth="45.0" layoutX="4.0" layoutY="2.0" onMouseEntered="#iconHelpEntered" onMouseExited="#iconHelpExited" onMousePressed="#action" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/info.png" />
+                              <Image url="@images/power.png" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
                </children>
                <padding>
-                  <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
             </HBox>
          </children>
       </StackPane>
+      <AnchorPane fx:id="resultat" layoutY="95.0" prefHeight="445.0" prefWidth="410.0" styleClass="dark-panel" stylesheets="@style.css">
+         <children>
+            <ImageView fx:id="imageViewResultat" fitHeight="251.0" fitWidth="400.0" layoutX="5.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
       <AnchorPane fx:id="anchorPixel" layoutY="95.0" onMousePressed="#action" prefHeight="445.0" prefWidth="410.0" styleClass="dark-panel">
          <children>
-            <Label layoutX="96.0" layoutY="61.0" text="Saisissez les pixels " textFill="WHITE">
+            <Label layoutX="59.0" layoutY="97.0" text="Saisissez le pixel d'arrivée" textFill="WHITE">
                <font>
                   <Font name="B612 Mono Bold" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="inputPixelDepart" layoutX="124.0" layoutY="93.0" promptText="Pixel de départ" />
-            <TextField fx:id="inputPixelArrivee" layoutX="124.0" layoutY="137.0" promptText="Pixel de départ" />
+            <TextField fx:id="inputPixelDepartX" layoutX="111.0" layoutY="50.0" maxWidth="60.0" promptText="x" />
+            <TextField fx:id="inputPixelArriveeX" layoutX="111.0" layoutY="131.0" maxWidth="60.0" promptText="x" />
             <Button layoutX="295.0" layoutY="384.0" mnemonicParsing="false" onAction="#validerPixel" text="Valider">
                <font>
                   <Font name="B612 Mono Regular" size="17.0" />
                </font>
             </Button>
-            <ImageView fx:id="imageViewDepart" fitHeight="150.0" fitWidth="200.0" layoutX="105.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageViewDepart" fitHeight="150.0" fitWidth="200.0" layoutX="105.0" layoutY="181.0" pickOnBounds="true" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="181.0" />
+            <Label layoutX="59.0" layoutY="14.0" text="Saisissez le pixel de départ" textFill="WHITE">
+               <font>
+                  <Font name="B612 Mono Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputPixelDepartY" layoutX="245.0" layoutY="50.0" maxWidth="60.0" promptText="y" />
+            <TextField fx:id="inputPixelArriveeY" layoutX="245.0" layoutY="131.0" maxWidth="60.0" promptText="y" />
          </children></AnchorPane>
-      <AnchorPane fx:id="resultat" layoutY="95.0" prefHeight="445.0" prefWidth="410.0" styleClass="dark-panel" stylesheets="@style.css">
-         <children>
-            <ImageView fx:id="imageViewResultat" fitHeight="150.0" fitWidth="200.0" layoutX="105.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
-         </children></AnchorPane>
-      <Pane fx:id="pane" layoutY="95.0" onMouseClicked="#action" onMousePressed="#action" prefHeight="445.0" prefWidth="410.0" styleClass="dark-panel">
+      <Pane fx:id="pane" layoutY="95.0" onMouseClicked="#action" onMousePressed="#action" prefHeight="445.0" prefWidth="410.0" styleClass="dark-panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
          <children>
             <Label layoutX="94.0" layoutY="160.0" text="Séléctionner l'image" textFill="WHITE">
                <font>
@@ -91,6 +95,23 @@
             </Button>
          </children>
       </Pane>
+      <AnchorPane fx:id="settings" layoutY="95.0" prefHeight="445.0" prefWidth="410.0" styleClass="dark-panel" stylesheets="@style.css">
+         <children>
+            <ImageView fitHeight="182.0" fitWidth="232.0" layoutX="105.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@images/github.png" />
+               </image></ImageView>
+            <ColorPicker id="choisirCouleur" fx:id="choisirCouleur" editable="true" layoutX="248.0" layoutY="74.0" onAction="#changerCouleur" promptText="Choisissez la couleur du chemin">
+               <value>
+                  <Color red="0.40425533056259155" green="1.0" />
+               </value></ColorPicker>
+            <Label layoutX="25.0" layoutY="77.0" text="Couleur du chemin" textFill="WHITE">
+               <font>
+                  <Font name="B612 Mono Bold" size="14.0" />
+               </font></Label>
+            <Separator layoutX="23.0" layoutY="154.0" prefHeight="9.0" prefWidth="365.0" />
+         </children>
+      </AnchorPane>
 
    </children>
 </AnchorPane>

@@ -8,9 +8,12 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.awt.*;
 import java.io.IOException;
+
+/**
+ * Fenêtre principale
+ */
 
 public class Main extends Application {
     private double xOffset = 0 ;
