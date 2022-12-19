@@ -100,7 +100,7 @@
          <children>
             <ImageView fitHeight="182.0" fitWidth="300.0" layoutX="50.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/Logo_Université_de_Paris.svg.png" />
+                  <Image url="@images/logo.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
